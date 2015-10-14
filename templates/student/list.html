@@ -1,0 +1,35 @@
+{% extends "base/theme.html"%}
+
+
+{% block main_content %}
+
+<div class="row">
+	
+
+	<div class="col-md-8">
+		<a class="btn btn-primary" href="/create">Create New Student</a>
+	</div>
+
+
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    {% for student in object_list %}
+        <div class='panel'>
+	        <h3>{{ student.name }}</h3>
+	        <p>{{ student.address }}</p>
+
+	        <p>
+		        <a href="{% url 'student_detail' pk=student.id %}" class="btn btn-primary">Details</a>
+		        <!-- <p><a href="{{ student.get_absolute_url }}" class="btn btn-primary">Details</a></p> -->
+		        <!-- <a href="{% url 'student_update' pk=student.id %}" class="btn btn-danger">Edit</a> -->		        
+	        </p>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base/theme.html"%}
+
+
+{% block main_content %}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        
+        <div class='panel'>
+            <form action="" method="post">{% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <button type="submit" class="btn btn-danger" >Confirm</button>
+                <a href="/student" class="btn btn-primary">Cancle</a>
+            </form>
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+{% endblock %}

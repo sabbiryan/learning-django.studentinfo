@@ -1,0 +1,32 @@
+{% extends "base/theme.html"%}
+
+
+{% block main_content %}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        
+        <div class='panel'>
+            <h3>{{ student.name }}</h3>
+            <p>{{ student.email }}</p>
+            <p>{{ student.phone }}</p>
+            <p>{{ student.address }}</p>
+
+             <p>                
+                <!-- <p><a href="{{ student.get_absolute_url }}" class="btn btn-primary">Details</a></p> -->
+                <a href="{% url 'student_update' pk=student.id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'student_delete' pk=student.id %}" class="btn btn-danger">Delete</a>
+                <a href="/student" class="btn btn-primary">Back</a>
+            </p>
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+{% endblock %}
